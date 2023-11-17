@@ -3,7 +3,7 @@ on: workflow_dispatch
 env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: teerraform-git-repo
-  EKS_CLUSTER: ${{ secrets.EKS_CLUSTER }}
+  EKS_CLUSTER: terraform-git-eks
 
 jobs:
   Testing:
