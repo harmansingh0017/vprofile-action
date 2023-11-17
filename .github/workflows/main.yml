@@ -97,5 +97,8 @@ jobs:
         run: kubectl create secret docker-registry reed --docker-server=${{ secrets.REGISTRY }} --docker-username=AWS  --docker-password=$(aws ecr get-login-password)
 
       - name: Print Helm Command
-        run: echo "Executing Helm Command: helm upgrade --install --create-namespace --timeout 0s --set appimage=${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }} apptag=${{ github.run_number }} --dependency-update -n default vprofile-stack helm/vprofilecharts"
+        run: |
+          echo "Executing Helm Command: helm upgrade --install --create-namespace --timeout 0s \
+           --set appimage=${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }} \
+           apptag=${{ github.run_number }} --dependency-update -n default vprofile-stack helm/vprofilecharts"
 
