@@ -1,4 +1,4 @@
-# vprofile Git actions
+# Java Microservices Application deployment to AWS
 
 This repo contains GitHub Actions workflow for building, testing and deploying the vprofile application to AWS EKS.
 
